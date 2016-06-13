@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="home">
+
+{{site.arabic.title}}
+  {% for problem in site.arabic %}
+    <h2>{{ problem.title }}</h2>
+      {% for folder in problem.folders %}
+          <h3>{{folder}}</h3>
+      {% endfor %}
+  {% endfor %}
+
+
+</div>

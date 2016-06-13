@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+  {% for folder in page.folders %}
+    {% for file in folder.files %}
+      <h3>{{folder.name}}/{{file.name}}</h3>
+  {% endfor %}
+  {% endfor %}
