@@ -1,9 +1,30 @@
 ---
 layout: default
 ---
+
 <h2>{{ page.title }}</h2>
-  {% for folder in page.folders %}
-    {% for file in folder.files %}
-      <h3>{{folder.name}}/{{file.name}}</h3>
-  {% endfor %}
-  {% endfor %}
+
+<script type="text/javascript">
+
+function shuffle(o) { for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x); return o; };
+
+function rand(X) { return Math.floor(Math.random() * X); }
+
+function RandElementOfRandMember(ObjOfArrays) {
+    var keys = Object.keys(ObjOfArrays);
+    var rKey = keys[rand(keys.length)];
+
+    return ObjOfArrays[rKey][rand(ObjOfArrays[rKey].length)];
+}
+
+var words = {{ page.words | jsonify }}
+
+console.log(words);
+
+shuffle(words);
+
+console.log(words);
+
+new Audio().play();
+
+</script>
