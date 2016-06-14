@@ -34,22 +34,22 @@
           {% for node in site.pages %}
           {% if page.url == node.url %}
           <li class="nav-item active">
-            <a class="nav-link" href="{{site.baseurl}}{{node.url}}">{{node.title}}<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{node.url | prepend: site.baseurl }}">{{node.title}}<span class="sr-only">(current)</span></a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{{site.baseurl}}{{node.url}}">{{node.title}}</a>
+            <a class="nav-link" href="{{node.url | prepend: site.baseurl }}">{{node.title}}</a>
           </li>
           {% endif %}
           {% endfor %}
           {% for node in site.arabic %}
           {% if page.url == node.url %}
           <li class="nav-item active">
-            <a class="nav-link" href="{{site.baseurl}}{{node.url}}">{{node.title}}<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{node.url | prepend: site.baseurl }}">{{node.title}}<span class="sr-only">(current)</span></a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{{site.baseurl}}{{node.url}}">{{node.title}}</a>
+            <a class="nav-link" href="{{node.url | prepend: site.baseurl }}">{{node.title}}</a>
           </li>
           {% endif %}
           {% endfor %}
