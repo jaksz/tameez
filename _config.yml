@@ -11,7 +11,6 @@ subtitle: Train your ear to distinguish Arabic sounds.
 email: jakub AT szypulka.de
 baseurl: "/tameez" # the subpath of your site, e.g. /blog
 url: "jaksz.github.io" # the base hostname & protocol for your site
-github_username:  jaksz/tameez
 
 # Build settings
 markdown: kramdown
