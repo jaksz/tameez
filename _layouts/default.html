@@ -16,6 +16,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script type="text/javascript" src="{{ "/static/bootstrap.min.js" | prepend: site.baseurl }}"></script>
   <script type="text/javascript" src="{{ "/static/jquery-1.11.3.min.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/static/wavesurfer.min.js" | prepend: site.baseurl }}"></script>
 
 </head>
 
@@ -62,6 +63,11 @@
 
   <!-- Content -->
   <div class="container">
+    {% if page.title %}
+    <div class="container" style="text-align: center">
+    <h1>{{page.title}}</h1>
+  </div>
+    {% endif%}
     {{ content }}
   </div>
 

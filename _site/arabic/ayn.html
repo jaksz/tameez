@@ -16,6 +16,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script type="text/javascript" src="/static/bootstrap.min.js"></script>
   <script type="text/javascript" src="/static/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="/static/wavesurfer.min.js"></script>
 
 </head>
 
@@ -66,14 +67,18 @@
 
   <!-- Content -->
   <div class="container">
+    
+    <div class="container" style="text-align: center">
+    <h1>ع (Ayn)</h1>
+  </div>
+    
     <div class="container" style="text-align:center">
-Currently practicing:<br/><br/>
-<div class="container">
-<h3>ع (Ayn)</h3>
-</div>
+<i>currently practicing</i><br/>
 <br/>
 
-<p>Press the word you hear:</p>
+<div id="waveform"></div>
+
+<p>Press what you hear:</p>
 
 <div class="container" id="buttons">
 
@@ -109,7 +114,14 @@ function check_word(result) {
 }
 
 
-new Audio(random_pronounciation_file).play();
+var wavesurfer = WaveSurfer.create({
+    container: '#waveform'
+});
+
+wavesurfer.load(random_pronounciation_file);
+wavesurfer.on('ready', function () {
+    wavesurfer.play();
+});
 
 </script>
 

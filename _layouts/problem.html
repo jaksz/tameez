@@ -2,13 +2,12 @@
 layout: default
 ---
 <div class="container" style="text-align:center">
-Currently practicing:<br/><br/>
-<div class="container">
-<h3>{{ page.title }}</h3>
-</div>
+<i>currently practicing</i><br/>
 <br/>
 
-<p>Press the word you hear:</p>
+<div id="waveform"></div>
+
+<p>Press what you hear:</p>
 
 <div class="container" id="buttons">
 
@@ -44,7 +43,14 @@ function check_word(result) {
 }
 
 
-new Audio(random_pronounciation_file).play();
+var wavesurfer = WaveSurfer.create({
+    container: '#waveform'
+});
+
+wavesurfer.load(random_pronounciation_file);
+wavesurfer.on('ready', function () {
+    wavesurfer.play();
+});
 
 </script>
 

@@ -4,4 +4,18 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at
+## Description
+{{site.title}} plays similar sounding Arabic words and gives you instant feedback if you recognized them correctly.
+
+## Name
+From the Arabic noun ``تمييز``, meaning ``distinction`` or ``differentiation``.
+
+## Thank You
+{{site.title}} is standing on the shoulders of the following giants:
+
+- [Bootstrap](http://getbootstrap.com)
+- [jQuery](https://jquery.com)
+- [Underscore.js](http://underscorejs.org)
+- [Github](http://github.com)
+
+_{{site.title}} is not affiliated with any of them._
