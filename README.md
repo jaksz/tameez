@@ -4,13 +4,18 @@ title: About
 permalink: /about/
 ---
 
-## Description
+### Description
 {{site.title}} plays similar sounding Arabic words and gives you instant feedback if you recognized them correctly.
 
-## Name
+### Name
 From the Arabic noun ``تمييز``, meaning ``distinction`` or ``differentiation``.
 
-## Thank You
+### Voice contributors
+In chronological order:
+
+– Rehab Saber _(Egypt)_
+
+### Thank You
 {{site.title}} is standing on the shoulders of the following giants:
 
 - [Bootstrap](http://getbootstrap.com)
