@@ -2,29 +2,44 @@
 layout: default
 ---
 
-<h2>{{ page.title }}</h2>
+<h3>{{ page.title }}</h3>
 
 <script type="text/javascript">
 
-function shuffle(o) { for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x); return o; };
 
-function rand(X) { return Math.floor(Math.random() * X); }
+var words = {{ page.words | jsonify }};
 
-function RandElementOfRandMember(ObjOfArrays) {
-    var keys = Object.keys(ObjOfArrays);
-    var rKey = keys[rand(keys.length)];
+words = _.toArray(words);
+random_word = _.sample(words);
+random_spelling = random_word.spelling;
+random_pronounciation_file = _.sample(random_word.pronounciations).file;
 
-    return ObjOfArrays[rKey][rand(ObjOfArrays[rKey].length)];
+words = words.sort()
+
+document.write('<div class="btn-group" role="group" aria-label="...">');
+
+for (word in words) {
+  if (words[word].spelling == random_spelling) {
+    document.write('<button type="button" class="btn btn-default" onclick="check_word(true)">' + words[word].spelling + '</button>');
+  } else {
+    document.write('<button type="button" class="btn btn-default" onclick="check_word(false)">' + words[word].spelling + '</button>');
+  }
+}
+document.write('</div>');
+
+function check_word(result) {
+  if (result == true) {
+    document.getElementById("result").innerHTML=('<div class="alert alert-success" role="alert">Correct!</div>');
+  } else {
+    document.getElementById("result").innerHTML=('<div class="alert alert-danger" role="alert">Incorrect!</div>');
+  }
 }
 
-var words = {{ page.words | jsonify }}
 
-console.log(words);
-
-shuffle(words);
-
-console.log(words);
-
-new Audio().play();
+new Audio(random_pronounciation_file).play();
 
 </script>
+
+<div id="result">
+<div class="alert alert-info" role="alert">Press the button that you hear!</div>
+</div>

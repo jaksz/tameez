@@ -25,7 +25,7 @@
   <div class="wrapper">
 
     <div class="page-header">
-      <h1>Tameez <small>Train your ear to distinguish Arabic sounds. (beta)</small></h1>
+      <h1>Tameez <small>Train your ear to distinguish Arabic sounds.</small></h1>
     </div>
 
   </div>
@@ -33,32 +33,47 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <h2>Ayn</h2>
+        <h3>Ayn</h3>
 
 <script type="text/javascript">
 
-function shuffle(o) { for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x); return o; };
 
-function rand(X) { return Math.floor(Math.random() * X); }
+var words = [{"spelling":"جامع","pronounciations":[{"file":"gam3/gam3-1.mp3"},{"file":"gam3/gam3-2.mp3"},{"file":"gam3/gam3-3.mp3"},{"file":"gam3/gam3-4.mp3"},{"file":"gam3/gam3-5.mp3"}]},{"spelling":"جامعة","pronounciations":[{"file":"gam3a/gam3a-1.mp3"},{"file":"gam3a/gam3a-2.mp3"},{"file":"gam3a/gam3a-3.mp3"},{"file":"gam3a/gam3a-4.mp3"},{"file":"gam3a/gam3a-5.mp3"}]},{"spelling":"جمع","pronounciations":[{"file":"gm3/gm3-1.mp3"},{"file":"gm3/gm3-2.mp3"},{"file":"gm3/gm3-3.mp3"},{"file":"gm3/gm3-4.mp3"},{"file":"gm3/gm3-5.mp3"}]}];
 
-function RandElementOfRandMember(ObjOfArrays) {
-    var keys = Object.keys(ObjOfArrays);
-    var rKey = keys[rand(keys.length)];
+words = _.toArray(words);
+random_word = _.sample(words);
+random_spelling = random_word.spelling;
+random_pronounciation_file = _.sample(random_word.pronounciations).file;
 
-    return ObjOfArrays[rKey][rand(ObjOfArrays[rKey].length)];
+words = words.sort()
+
+document.write('<div class="btn-group" role="group" aria-label="...">');
+
+for (word in words) {
+  if (words[word].spelling == random_spelling) {
+    document.write('<button type="button" class="btn btn-default" onclick="check_word(true)">' + words[word].spelling + '</button>');
+  } else {
+    document.write('<button type="button" class="btn btn-default" onclick="check_word(false)">' + words[word].spelling + '</button>');
+  }
+}
+document.write('</div>');
+
+function check_word(result) {
+  if (result == true) {
+    document.getElementById("result").innerHTML=('<div class="alert alert-success" role="alert">Correct!</div>');
+  } else {
+    document.getElementById("result").innerHTML=('<div class="alert alert-danger" role="alert">Incorrect!</div>');
+  }
 }
 
-var words = [{"spelling":"جامع","pronounciations":[{"file":"gam3/gam3-1.mp3"},{"file":"gam3/gam3-2.mp3"},{"file":"gam3/gam3-3.mp3"},{"file":"gam3/gam3-4.mp3"},{"file":"gam3/gam3-5.mp3"}]},{"spelling":"جامعة","pronounciations":[{"file":"gam3a/gam3a-1.mp3"},{"file":"gam3a/gam3a-2.mp3"},{"file":"gam3a/gam3a-3.mp3"},{"file":"gam3a/gam3a-4.mp3"},{"file":"gam3a/gam3a-5.mp3"}]},{"spelling":"جمع","pronounciations":[{"file":"gm3/gm3-1.mp3"},{"file":"gm3/gm3-2.mp3"},{"file":"gm3/gm3-3.mp3"},{"file":"gm3/gm3-4.mp3"},{"file":"gm3/gm3-5.mp3"}]}]
 
-console.log(words);
-
-shuffle(words);
-
-console.log(words);
-
-new Audio().play();
+new Audio(random_pronounciation_file).play();
 
 </script>
+
+<div id="result">
+<div class="alert alert-info" role="alert">Press the button that you hear!</div>
+</div>
 
       </div>
     </div>
@@ -67,13 +82,13 @@ new Audio().play();
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">Tameez <small>Train your ear to distinguish Arabic sounds. (beta)</small></h2>
+    <h2 class="footer-heading">Tameez <small>Train your ear to distinguish Arabic sounds.</small></h2>
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <b>Licensing</b><br/>
           <li>&copy; 2016 <a href="mailto:jakub AT szypulka.de">Jakub Szypulka</a></li>
-          <li><a href="https://www.gnu.org/licenses/gpl.txt"><img src="/static/code.png"/></a></li>
+          <li><a href="https://www.gnu.org/licenses/gpl.txt"><img src="/static/code.png"></a></li>
           <li><a href="http://creativecommons.org/licenses/by-nc/4.0/legalcode"><img src="/static/audio.png"/></a></li>
         </ul>
       </div>
@@ -96,8 +111,7 @@ new Audio().play();
       </div>
 
       <!-- <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</p>
+        <p></p>
       </div> -->
     </div>
 
