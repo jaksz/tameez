@@ -1,20 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
 
-  {% include head.html %}
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% if page.title %}{{ page.title | escape }} – {{ site.title }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.subtitle }}{% endif %}">
 
-  <body>
+  <!-- JS and CSS -->
+  <link rel="stylesheet" href="{{ "/static/bootstrap.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/static/custom.css" | prepend: site.baseurl }}">
+  <script type="text/javascript" src="{{ "/static/underscore-min.js" | prepend: site.baseurl }}"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript" src="{{ "/static/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/static/jquery-1.11.3.min.js" | prepend: site.baseurl }}"></script>
 
-    {% include header.html %}
+</head>
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+<body>
+
+
+
+  <!-- Navigation -->
+  <div class="container">
+    <div class="header clearfix">
+
+      <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="{{ site.baseurl}}/">{{ site.title }}</a>
+        <ul class="nav navbar-nav">
+
+          {% for node in site.pages %}
+          {% if page.url == node.url %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{{node.url}}">{{node.title}}<span class="sr-only">(current)</span></a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{node.url}}">{{node.title}}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+          {% for node in site.arabic %}
+          {% if page.url == node.url %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{{node.url}}">{{node.title}}<span class="sr-only">(current)</span></a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{node.url}}">{{node.title}}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+
+  <!-- Content -->
+  <div class="container">
+    {{ content }}
+  </div>
+
+
+
+  <!-- Footer -->
+  <div class="container">
+    <hr>
+
+    <div class="row">
+
+      <div class="col-lg-12">
+        <p><b>{{ site.title }}</b> – {{ site.subtitle }}</p>
       </div>
     </div>
 
-    {% include footer.html %}
+    <div class="row">
 
-  </body>
+      <div class="col-lg-6">
+        <p>
+          <b>Licensing</b><br/>
+          &copy; 2016 <a href="mailto:{{ site.email }}">Jakub Szypulka</a><br/> with the following licenses:<br/>
+          <a href="https://www.gnu.org/licenses/gpl.txt"><img src="{{ "/static/code.png" | prepend: site.baseurl }}"></a>
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/legalcode"><img src="{{ "/static/audio.png" | prepend: site.baseurl }}"/></a>
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <p>
+          <b>Contribute</b>
+          <br/>Share your code, upload audio files, send bug reports, feature requests, feedback or suggestions here:<br/>
+          <a href="http://github.com/jaksz/tameez"><img src="{{ "/static/github.png" | prepend: site.baseurl }}"/></a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
 
 </html>

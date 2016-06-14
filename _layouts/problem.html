@@ -1,8 +1,16 @@
 ---
 layout: default
 ---
-
+<div class="container" style="text-align:center">
+Currently practicing:<br/><br/>
+<div class="container">
 <h3>{{ page.title }}</h3>
+</div>
+<br/>
+
+<p>Press the word you hear:</p>
+
+<div class="container" id="buttons">
 
 <script type="text/javascript">
 
@@ -16,22 +24,22 @@ random_pronounciation_file = _.sample(random_word.pronounciations).file;
 
 words = words.sort()
 
-document.write('<div class="btn-group" role="group" aria-label="...">');
+
 
 for (word in words) {
   if (words[word].spelling == random_spelling) {
-    document.write('<button type="button" class="btn btn-default" onclick="check_word(true)">' + words[word].spelling + '</button>');
+    document.write('<button type="button" class="btn btn-lg btn-warning-outline" id="right_button" onclick="check_word(true)">' + words[word].spelling + '</button> ');
   } else {
-    document.write('<button type="button" class="btn btn-default" onclick="check_word(false)">' + words[word].spelling + '</button>');
+    document.write('<button type="button" class="btn btn-lg btn-warning-outline" id="wrong_button" onclick="check_word(false)">' + words[word].spelling + '</button> ');
   }
 }
-document.write('</div>');
+
 
 function check_word(result) {
   if (result == true) {
-    document.getElementById("result").innerHTML=('<div class="alert alert-success" role="alert">Correct!</div>');
+    document.getElementById("buttons").innerHTML=('<div class="alert alert-success" role="alert" onClick="window.location.reload()"><strong>Well done!</strong> You answered correctly:<p style="font-size:300%">' + random_spelling + '</p><small>(Click this field to try again)</small></div>');
   } else {
-    document.getElementById("result").innerHTML=('<div class="alert alert-danger" role="alert">Incorrect!</div>');
+    document.getElementById("buttons").innerHTML=('<div class="alert alert-danger" role="alert" onClick="window.location.reload()"><strong>Wrong!</strong> You answered incorrectly. The correct word was:<p style="font-size:300%">' + random_spelling + '</p><small>(Click this field to try again)</small></div>');
   }
 }
 
@@ -40,6 +48,5 @@ new Audio(random_pronounciation_file).play();
 
 </script>
 
-<div id="result">
-<div class="alert alert-info" role="alert">Press the button that you hear!</div>
+</div>
 </div>
