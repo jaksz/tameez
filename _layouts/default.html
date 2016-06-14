@@ -29,7 +29,7 @@
     <div class="header clearfix">
 
       <nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" href="{{site.baseurl}}">{{ site.title }}</a>
+        <a class="navbar-brand" href="{{site.baseurl}}/">{{ site.title }}</a>
         <ul class="nav navbar-nav">
 
           {% for node in site.pages %}
@@ -79,7 +79,7 @@
 
     <div class="row">
 
-      <div class="col-lg-12">
+      <div class="col-lg-12" style="text-align:center">
         <p><b>{{ site.title }}</b> – {{ site.subtitle }}</p>
       </div>
     </div>
@@ -89,7 +89,7 @@
       <div class="col-lg-6">
         <p>
           <b>Licensing</b><br/>
-          &copy; 2016 <a href="mailto:{{ site.email }}">Jakub Szypulka</a><br/> with the following licenses:<br/>
+          &copy; 2016 <a href="mailto:{{ site.email }}">Jakub Szypulka</a> and <a href="/about">contributors</a><br/> with the following licenses:<br/>
           <a href="https://www.gnu.org/licenses/gpl.txt"><img src="{{ "/static/code.png" | prepend: site.baseurl }}"></a>
           <a href="http://creativecommons.org/licenses/by-nc/4.0/legalcode"><img src="{{ "/static/audio.png" | prepend: site.baseurl }}"/></a>
         </p>

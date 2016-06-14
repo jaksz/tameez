@@ -27,18 +27,18 @@ words = words.sort()
 
 for (word in words) {
   if (words[word].spelling == random_spelling) {
-    document.write('<button type="button" class="btn btn-lg btn-warning-outline" id="right_button" onclick="check_word(true)">' + words[word].spelling + '</button> ');
+    document.write('<button type="button" class="btn btn-lg btn-warning-outline" id="right_button" onclick="check_word(true)" style="font-size:300%">' + words[word].spelling + '</button> ');
   } else {
-    document.write('<button type="button" class="btn btn-lg btn-warning-outline" id="wrong_button" onclick="check_word(false)">' + words[word].spelling + '</button> ');
+    document.write('<button type="button" class="btn btn-lg btn-warning-outline" id="wrong_button" onclick="check_word(false)" style="font-size:300%">' + words[word].spelling + '</button> ');
   }
 }
 
 
 function check_word(result) {
   if (result == true) {
-    document.getElementById("buttons").innerHTML=('<div class="alert alert-success" role="alert" onClick="window.location.reload()"><strong>Well done!</strong> You answered correctly:<p style="font-size:300%">' + random_spelling + '</p><small>(Click this field to try again)</small></div>');
+    document.getElementById("buttons").innerHTML=('<div class="alert alert-success" role="alert" onClick="window.location.reload()"><strong>Well done!</strong> You answered correctly:<p style="font-size:500%">' + random_spelling + '</p><small>(Click this field to try again)</small></div>');
   } else {
-    document.getElementById("buttons").innerHTML=('<div class="alert alert-danger" role="alert" onClick="window.location.reload()"><strong>Wrong!</strong> You answered incorrectly. The correct word was:<p style="font-size:300%">' + random_spelling + '</p><small>(Click this field to try again)</small></div>');
+    document.getElementById("buttons").innerHTML=('<div class="alert alert-danger" role="alert" onClick="window.location.reload()"><strong>Wrong!</strong> You answered incorrectly. The correct word was:<p style="font-size:500%">' + random_spelling + '</p><small>(Click this field to try again)</small></div>');
   }
 }
 

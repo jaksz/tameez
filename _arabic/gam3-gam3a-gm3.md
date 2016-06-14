@@ -1,5 +1,5 @@
 ---
-title: ع (Ayn)
+title: جامع/جامعة/جمع
 layout: problem
 
 words:
