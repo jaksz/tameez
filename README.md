@@ -13,7 +13,7 @@ From the Arabic noun ``تمييز``, meaning ``distinction`` or ``differentiatio
 ## Voice contributors
 In chronological order:
 
-- Rehab Saber _(Egypt)_
+- Rehab Saber _(Egypt)_
 - Marwa Khafaga _(Egypt)_
 
 ## Thank You
