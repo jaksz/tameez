@@ -23,7 +23,7 @@ Tameez is standing on the shoulders of the following giants:
 - [jQuery](https://jquery.com) _(for functionality)_
 - [Underscore.js](http://underscorejs.org) _(for functionality)_
 - [Github](http://github.com) _(for hosting)_
-- [wavesurfer.js](http://wavesurfer-js.org) _(for displaying wave forms)_
+- [wavesurfer.js](http://wavesurfer-js.org) _(for displaying waveforms)_
 - [Audacity](http://www.audacityteam.org) _(for preparing audio files)_
 
 _Tameez is not affiliated with any of them._
