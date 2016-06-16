@@ -20,7 +20,7 @@ In chronological order:
 ## Thank You
 Tameez is standing on the shoulders of the following giants:
 
-- [Bootstrap](http://getbootstrap.com) _(for design)_
+- [Bootstrap](http://getbootstrap.com) _(for looks)_
 - [jQuery](https://jquery.com) _(for functionality)_
 - [Underscore.js](http://underscorejs.org) _(for functionality)_
 - [Github](http://github.com) _(for hosting)_
