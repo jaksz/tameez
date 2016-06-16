@@ -15,6 +15,7 @@ In chronological order:
 
 - Rehab Saber _(Egypt)_
 - Marwa Khafaga _(Egypt)_
+- Israa Allam _(Egypt)_
 
 ## Thank You
 Tameez is standing on the shoulders of the following giants:
