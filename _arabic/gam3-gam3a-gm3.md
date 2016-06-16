@@ -1,5 +1,5 @@
 ---
-title: جامع/جامعة/جمع
+title: جامع - جامعة - جمع
 layout: problem
 
 words:

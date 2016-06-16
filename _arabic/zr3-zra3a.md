@@ -1,5 +1,5 @@
 ---
-title: زرع/زراعة
+title: زرع - زراعة
 layout: problem
 
 words:

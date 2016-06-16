@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-word1en = ""
-word1ar = ""
-count1 =
+word1en = "6in"
+word1ar = "طين"
+count1 = 7
 
-word2en = ""
-word2ar = ""
-count2 =
+word2en = "tin"
+word2ar = "تين"
+count2 = 7
 
 md_file = open("""{0}-{1}.md""".format(word1en, word2en), 'w')
 
 md_file.write("""---
-title: {0}/{1}
+title: {0} - {1}
 layout: problem
 
 words:

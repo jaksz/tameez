@@ -1,5 +1,5 @@
 ---
-title: عالَم/عالِم
+title: عالَم - عالِم
 layout: problem
 
 words:
