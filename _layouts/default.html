@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <!-- Meta -->
+  <!-- meta -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,13 +10,13 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.subtitle }}{% endif %}">
 
   <!-- JS and CSS -->
-  <link rel="stylesheet" href="{{ "/static/bootstrap.min.css" | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="{{ "/static/custom.css" | prepend: site.baseurl }}">
   <script type="text/javascript" src="{{ "/static/underscore-min.js" | prepend: site.baseurl }}"></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script type="text/javascript" src="{{ "/static/bootstrap.min.js" | prepend: site.baseurl }}"></script>
   <script type="text/javascript" src="{{ "/static/jquery-1.11.3.min.js" | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ "/static/bootstrap.min.js" | prepend: site.baseurl }}"></script>
   <script type="text/javascript" src="{{ "/static/wavesurfer.min.js" | prepend: site.baseurl }}"></script>
+  <link rel="stylesheet" href="{{ "/static/bootstrap.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/static/custom.css" | prepend: site.baseurl }}">
 
 </head>
 
@@ -24,56 +24,58 @@
 
 
 
-  <!-- Navigation -->
+  <!-- navigation -->
   <div class="container">
-    <div class="header clearfix">
 
-      <nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" href="{{site.baseurl}}/">{{ site.title }}</a>
-        <ul class="nav navbar-nav">
 
-          {% for node in site.pages %}
-          {% if page.url == node.url %}
-          <li class="nav-item active">
-            <a class="nav-link" href="{{node.url | prepend: site.baseurl }}">{{node.title}}<span class="sr-only">(current)</span></a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{{node.url | prepend: site.baseurl }}">{{node.title}}</a>
-          </li>
-          {% endif %}
-          {% endfor %}
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link{% if page.url == "/" %} active{% endif %}" href="{{site.baseurl}}/">{{ site.title }}</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle{% for node in site.arabic %}{% if page.url == node.url %} active{% endif %}{% endfor %}" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Courses</a>
+        <div class="dropdown-menu">
           {% for node in site.arabic %}
-          {% if page.url == node.url %}
-          <li class="nav-item active">
-            <a class="nav-link" href="{{node.url | prepend: site.baseurl }}">{{node.title}}<span class="sr-only">(current)</span></a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{{node.url | prepend: site.baseurl }}">{{node.title}}</a>
-          </li>
-          {% endif %}
+            {% if page.url == node.url %}
+              <a class="dropdown-item disabled" href="#">{{node.title}}</a>
+            {% else %}
+              <a class="dropdown-item" href="{{node.url | prepend: site.baseurl }}">{{node.title}}</a>
+            {% endif %}
           {% endfor %}
-        </ul>
-      </nav>
-    </div>
+        </div>
+      </li>
+      {% for node in site.pages %}
+        {% if node.url == "/" %}
+        {% else %}
+          {% if page.url == node.url %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{{node.url | prepend: site.baseurl }}">{{node.title}}</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{node.url | prepend: site.baseurl }}">{{node.title}}</a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <hr>
   </div>
 
 
-
-  <!-- Content -->
+  <!-- content -->
   <div class="container">
     {% if page.title %}
     <div class="container" style="text-align: center">
-    <h1>{{page.title}}</h1>
-  </div>
+      <h1>{{page.title}}</h1>
+    </div>
     {% endif%}
     {{ content }}
   </div>
 
 
 
-  <!-- Footer -->
+  <!-- footer -->
   <div class="container">
     <hr>
 
@@ -83,7 +85,6 @@
         <p><b>{{ site.title }}</b><br/>{{ site.subtitle }}</p>
       </div>
     </div>
-
     <div class="row">
 
       <div class="col-lg-6">
@@ -94,6 +95,7 @@
           <a href="http://creativecommons.org/licenses/by-nc/4.0/legalcode"><img src="{{ "/static/audio.png" | prepend: site.baseurl }}"/></a>
         </p>
       </div>
+
       <div class="col-lg-6">
         <p>
           <b>Contribute</b>
@@ -103,6 +105,7 @@
       </div>
 
     </div>
+
   </div>
 
 </body>
