@@ -3,16 +3,18 @@ layout: default
 syntax: kramdown
 ---
 
+<h1>Welcome to Tameez</h1>
+<p class="lead">Teach your ear to distinguish Arabic sounds with instant feedback. Press one of the links below to get started:</p>
 
-<h1>Welcome to Tameez</h1><br/>
-<p class="lead">Teach your ear to distinguish Arabic sounds with instant feedback. Press one of the links below to get started:</p><br/>
-
-{% for node in site.arabic %}
-  {% assign counter = 0 %}
-  {% for word in node.words %}
-      {% assign counter = counter | plus: word.pronounciations.size %}
-  {% endfor %}
-<a href="{{node.url | prepend: site.baseurl }}"><h3>{{node.title}} <span class="label label-default">{{counter}}</span></h3></a>
+<div class="list-group">
+  {% for node in site.arabic %}
+    {% assign counter = 0 %}
+    {% for word in node.words %}
+        {% assign counter = counter | plus: word.pronounciations.size %}
+    {% endfor %}
+  <a href="{{node.url | prepend: site.baseurl }}" class="list-group-item">
+    <h3 class="list-group-item-heading">{{node.title}}</h3>
+    <p class="list-group-item-text text-muted">{{counter}} sounds available.</p>
+  </a>
 {% endfor %}
-<br/>
-<p><i>(The grey field shows the number of available unique pronounciations.)</i></p>
+</div>
