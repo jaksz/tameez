@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-word1en = "6in"
-word1ar = "طين"
+word1en = "m6r"
+word1ar = "مطر"
 count1 = 7
 
-word2en = "tin"
-word2ar = "تين"
+word2en = "m6ar"
+word2ar = "مطار"
 count2 = 7
 
 md_file = open("""{0}-{1}.md""".format(word1en, word2en), 'w')
