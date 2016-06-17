@@ -1,6 +1,7 @@
 ---
 title: طين - تين
 layout: problem
+colorclass: danger
 
 words:
   - spelling: "طين"
