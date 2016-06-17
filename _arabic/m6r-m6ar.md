@@ -1,6 +1,7 @@
 ---
 title: مطر - مطار
 layout: problem
+colorclass: warning
 
 words:
   - spelling: "مطر"

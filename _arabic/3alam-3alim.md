@@ -1,6 +1,7 @@
 ---
 title: عالَم - عالِم
 layout: problem
+colorclass: warning
 
 words:
   - spelling: "عالَم"

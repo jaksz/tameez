@@ -1,6 +1,7 @@
 ---
 title: كوريا - قَريّة
 layout: problem
+colorclass: warning
 
 words:
   - spelling: "كوريا"

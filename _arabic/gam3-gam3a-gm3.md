@@ -1,6 +1,7 @@
 ---
 title: جامع - جامعة - جمع
 layout: problem
+colorclass: danger
 
 words:
   - spelling: "جامع"

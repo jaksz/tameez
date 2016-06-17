@@ -1,6 +1,7 @@
 ---
 title: بضاعة - بيضة
 layout: problem
+colorclass: warning
 
 words:
   - spelling: "بضاعة"

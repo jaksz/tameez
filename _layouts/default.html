@@ -66,9 +66,8 @@
   <!-- content -->
   <div class="container">
     {% if page.title %}
-    <div class="container" style="text-align: center">
-      <h1>{{page.title}}</h1>
-    </div>
+      <h1 class="display-3{% if page.colorclass %} text-{{ page.colorclass }}{% endif %}" {% if page.layout == 'problem' %} style="text-align:center"{% endif %}>{{page.title}}</h1>
+      <hr>
     {% endif%}
     {{ content }}
   </div>

@@ -1,20 +1,15 @@
 ---
+title: Welcome to Tameez
 layout: default
 syntax: kramdown
 ---
+<p class="lead">Teach your ear to distinguish Arabic sounds with instant feedback.<br/>Press one of the links below to get started.</p>
 
-<h1>Welcome to Tameez</h1>
-<p class="lead">Teach your ear to distinguish Arabic sounds with instant feedback.<br/>Press one of the links below to get started:</p>
+<p class="text-muted"><i>Colors suggest what level of difficulty to expect.</i></p>
 
-<div class="list-group">
-  {% for node in site.arabic %}
-    {% assign counter = 0 %}
-    {% for word in node.words %}
-        {% assign counter = counter | plus: word.pronounciations.size %}
+
+<ul class="list-unstyled">
+    {% for node in site.arabic %}
+    <a type="button" class="btn btn-block{% if node.colorclass %} btn-{{ node.colorclass }}-outline{% else %} btn-success-outline{% endif %}" href="{{node.url | prepend: site.baseurl }}" style="font-size:200%">{{node.title}}</a>
     {% endfor %}
-  <a href="{{node.url | prepend: site.baseurl }}" class="list-group-item">
-    <h3 class="list-group-item-heading">{{node.title}}</h3>
-    <p class="list-group-item-text text-muted">{{counter}} sounds available</p>
-  </a>
-{% endfor %}
-</div>
+</ul>
