@@ -1,7 +1,7 @@
 ---
 title: أمل - عمل
 layout: problem
-colorclass: danger
+colorclass: warning
 
 words:
   - spelling: "أمل"
